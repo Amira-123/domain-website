@@ -1,0 +1,7 @@
+@mixin buttonStyle {
+     border: none;
+    padding: .5rem 1.2rem;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: $hoverColor;
+    }

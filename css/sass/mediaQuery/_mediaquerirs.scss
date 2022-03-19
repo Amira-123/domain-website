@@ -1,0 +1,163 @@
+// // for mobile
+// @media all and (max-width:767px){
+//     //////////header
+//     .search-content{
+//         width: 95% !important;
+//         display: block !important;
+//         .input-section{
+//             width: 100% !important;
+//         }
+//         input{
+//             width: 100% !important;
+//         }
+//         .btn-header{
+//            width: 75% !important;
+//             margin:  2rem auto;
+//         }
+//         button{
+//             width: 100% !important;
+           
+//         }
+//     }
+//     .footer{
+//         background-size: 100% 100%;
+//     }
+//     .nav-content{
+//         .list{
+//            display: block !important;
+          
+//         }
+//         ul{
+//             position: fixed;
+//             z-index: 999999;
+//             width: 100%;
+//             height:40vh;
+//             background-color: #fff;
+//             top:20vh;
+//             left: -100%;
+//             text-align: center;
+//             transition: all .5s;
+//         }
+//         li{
+//             display: block !important;
+//             margin: 20px 0;
+//             border-bottom: 1px solid #333;
+//             a{
+//                 color: #333 !important;
+//                 &:hover{
+//                     color: $hoverColor !important;
+//                 }
+//             }
+//         }
+//     }
+//     nav ul.show{
+//         left: 0;
+//     }
+//     /////////////////cloud section
+//     .main-cloud{
+//         background-color: gold !important;
+//         height: 180vh !important;
+//     }
+//     .cloud-items{
+//         display: block;
+//         .content{
+//             display: block;
+//             width:95% !important;
+//             margin-bottom: 2rem;
+//             background-color: chartreuse;
+//         }
+       
+//     }
+//     ///////////////////////cloud feature
+//    .cloud-feature{
+//     //  margin-top: 100rem;
+//      .main-box{
+//          width: 98% !important;
+//      }
+//     }
+    
+    
+// } 
+// // for small 
+// @media  all and (min-width:768px) and (max-width:991px){
+//      //////////header
+//      .search-content{
+//         display: block !important;
+//         .input-section{
+//             width: 100% !important;
+//         }
+//         input{
+//             width: 100% !important;
+//         }
+//         .btn-header{
+//            width: 75% !important;
+//             margin:  2rem auto;
+//         }
+//         button{
+//             width: 100% !important;
+           
+//         }
+//     }
+//     .nav-content{
+//         // background-color: gold;
+//         .list{
+//            display: block !important;
+          
+//         }
+//         // a{
+//         //     color: $hoverColor !important;
+           
+//         // }
+//         ul{
+//             position: fixed;
+//             z-index: 999999;
+//             width: 100%;
+//             height:40vh;
+//             background-color: #fff;
+//             top:20vh;
+//             left: -100%;
+//             text-align: center;
+//             transition: all .5s;
+//         }
+//         li{
+//             display: block !important;
+//             margin: 20px 0;
+//             border-bottom: 1px solid #333;
+//             a{
+//                 color: #333 !important;
+//                 &:hover{
+//                     color: $hoverColor !important;
+//                 }
+//             }
+//         }
+//     }
+//     nav ul.show{
+//         left: 0;
+//     }
+//      /////////////////cloud section
+//      .cloud-items{
+//         display: block;
+//         .content{
+//             display: block;
+//             width:48% !important;
+//             margin-bottom: 2rem;
+//             background-color: chartreuse;
+//         }
+       
+//     }
+//     ///////////////////////cloud feature
+//    .cloud-feature{
+//      margin-top: 70rem;
+//      .main-box{
+//          width: 48% !important;
+//      }
+//     }
+// }
+// // for medium 
+// @media all and (min-width:992px) and (max-width:1199px){
+   
+// }
+// // for xlarge
+// @media all and (min-width:1200px) {
+    
+// }

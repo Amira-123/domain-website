@@ -1,0 +1,716 @@
+//base style
+body *{
+    padding: 0;
+    margin: 0;
+    box-sizing:border-box;
+    text-decoration: none;
+    list-style: none;
+    &:hover{
+       text-decoration: none;
+    }
+}
+//////////set some variables
+$textColor:#010725;
+$secondBgColor:#e9e3e3;
+$hoverColor:#06f1b3;
+$paragraphColor:#6b7c93;
+// set mixins
+@mixin textStyle {
+    color: $hoverColor;
+    font-weight: 500;
+}
+@mixin main-style {
+    color: #fff;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+@mixin headerColor {
+    color: #47495A;
+    font-weight: 500;
+}
+@mixin boxText {
+    color: $textColor;
+    padding: 1.4rem 0rem;
+    font-weight: 500;
+    font-size: 1.4rem;
+}
+@mixin imageHover {
+    top:0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba($color:#4D3DBA, $alpha: .7);
+    position: absolute;
+}
+@mixin btnStyle{
+    padding:1rem;
+}
+@mixin trans {
+    transition: all 1s;
+}
+@mixin buttonStyle {
+   border: none;
+   padding: .5rem 1.2rem;
+   text-transform: uppercase;
+   color: #fff;
+   background-color: $hoverColor;
+}
+@mixin navmedia {
+    .nav-content{
+        .logo{
+            margin-right: 0;
+        }
+        .icon{
+            .list{
+                display: block; 
+            }
+        }
+        ul{
+            position: fixed;
+            z-index: 999999;
+            width: 100% ;
+            height:40vh;
+            top:15vh;
+            left:-100% ;
+            background-color: #fff;
+            text-align: center;
+            li{
+                display: block ;
+                width: 100%;
+                border-bottom: 1px solid rgb(177, 174, 174);
+                a{
+                    color: #333 ;
+                        &:hover{
+                        color: $hoverColor;
+                        }
+                }
+            }
+        }
+    }
+}
+@mixin headerMedia {
+    .search-content{
+        width: 95% ;
+        display: block ;
+        .input-section{
+            width: 100% ;
+        }
+        input{
+            width: 100% ;
+        }
+        .btn-header{
+           width: 75% ;
+            margin:  2rem auto;
+        }
+        button{
+            width: 100% ;
+           
+        }
+    }
+}
+// start code of navbar
+nav{
+    height:15vh;
+    position: fixed;
+    top:0;
+    right: 0;
+    left: 0;
+    z-index: 99999;
+    border-bottom: 1px solid rgb(202, 195, 195);
+    .nav-content{
+        height: 15vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .logo{
+            margin-right: 6rem;
+            a {
+                color: $secondBgColor;
+                font-weight: 500;
+                font-size: 1.7rem;
+                text-transform: uppercase;
+                
+            }
+            .navbar-cloud{
+                font-size: 1.1rem;
+            }
+           
+        }
+        ul{
+            li{
+                display: inline-block;
+                padding: 1rem ;
+                margin: 0 .3rem;
+               a{
+                   color: #fff;
+                  &:hover{
+                    color: $hoverColor;
+                   }
+               }
+            }
+        }
+        a.active{
+            color: $hoverColor;
+        }
+        .icon{
+           .list{
+                font-size: 25px;
+                padding: .2rem .7rem;
+                background-color: $hoverColor;
+                cursor: pointer;
+               display: none; 
+            }
+        }
+    } 
+    .btn-section{
+        button{
+            @include buttonStyle;
+            margin: 0 .5rem;
+            font-size: .8rem;
+        }
+        .signup{
+            border:2px solid $hoverColor;
+        }
+        .login{
+            background-color: transparent;
+            border: 2px solid #fff;
+            &:hover{
+                background-color: $hoverColor;
+                color: #fff;
+                border: 2px solid $hoverColor;
+            }
+        }
+    }
+}
+/////////////////style with scroll
+.navbarbg{
+    border:none ;
+    background-color: #fff ;
+    box-shadow:0 0 5px 2px rgb(209, 205, 205) ;
+    .nav-content{
+        .logo{
+            a {
+                color: rgb(20, 19, 19);
+                    
+            }
+        }
+        ul{
+            li{
+                a{
+                    color: #333 ;
+                    &:hover{
+                    color: $hoverColor;
+                    }
+                }
+                   
+            }
+        }
+    }
+    .btn-section{
+        .login{
+            border: solid 2px $hoverColor ;
+            color: $hoverColor ;
+            background-color: #fff ;
+            &:hover{
+                color: #fff ;
+            background-color: $hoverColor;
+            }
+        }
+    }
+}
+// ////////////////////////////////////end code of navbar
+////////////////////////////////////// start code of header
+header{
+    .image-layer{
+        background-image:url(../images/layer.png);
+        background-size: cover cover;
+        height: 120vh;
+        .header-layer{
+            @include imageHover;
+            height: 120vh;
+            background-color: rgba($color: #1D1568, $alpha:.7);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            h1{
+               @include main-style;
+            }
+            .search-content{
+                display: flex;
+                justify-content: space-between;
+                padding: 2.5rem 0;
+                width:60%;
+                .input-section{
+                    width: 78%;
+                    input{
+                        @include btnStyle;
+                        width: 100%;
+                        border:  1px solid #fff;
+                        background-color: transparent;
+                        &:focus{
+                        outline: none;
+                        }
+                        &::placeholder{
+                            color: #e9e3e3;
+                        }
+                    
+                    }
+                }
+                .btn-header{
+                    width: 20%;
+                    button{
+                        width: 100%;
+                        background-color: $hoverColor;
+                        border: none;
+                        @include main-style;
+                         @include btnStyle;
+                    }
+                }
+            }
+            label{
+               color: #fff;
+               font-weight: 500;
+            }
+        }
+    }
+}
+////////////////////////////////////////// end code of header
+///////////////////////////////////////////////start code of about
+.logo-section {
+    padding: 4rem 0;
+    background-color: $secondBgColor;
+    .logo-text{
+       color:$textColor;
+       font-size: 1.2rem;
+       text-align: center;
+       font-weight: 600;
+       padding-bottom: 2rem;
+    }
+    .content{
+        display: flex;
+        justify-content: space-evenly;
+        .icon{
+            i{
+                font-size: 3.7rem;
+                color: #5588D3;
+            }
+        }
+        .text{
+            h5{
+                text-transform: uppercase;
+                color: #010725;
+                font-weight: 500;
+            }
+            span{
+                font-size:.6rem;
+                text-transform: uppercase;
+                color: #797c8f;
+            }
+        }
+    }
+}
+/////////////////////////////////////////end code of about
+//// //////////////////////////////////////start code of service
+.service-section{
+    padding: 5rem 0rem;
+    .address {
+        @include  textStyle;
+    }
+    h2{
+       @include headerColor;
+    }
+    .sec-par{
+       color:$paragraphColor;
+        padding: .3rem 0;
+    }
+    .service-container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 3rem;
+  
+        .content{
+            width: 31.5%;
+            padding: 3rem 1.5rem;
+            background-color: #ebebee;
+            text-align: center;
+            border-radius: .2rem;
+            .icon{
+                i{
+                    background-color: #1E91DF;
+                    padding: 2rem;
+                    color: #e9e3e3;
+                    border-radius: 50%;
+                    font-size: 1.7rem;
+                }
+            }
+            .first-par{
+                @include boxText;
+            }
+            .sec-par{
+                color:$paragraphColor;
+                a{
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+//////////////////////////////////// end code of service
+////////////////////////////////// start code of cloud hosting
+
+#cloud-section{
+    .cloud-hosting{
+        background-image:url(../images/plan_bg03.jpg);
+        background-size: cover;
+        height: 60vh;
+        // position: relative;
+        .image-layer{
+            // @include imageHover;
+            
+            padding-top: 4rem;
+            color: #fff;
+    
+            h2{
+                text-align: center;
+                }
+            .par{
+                text-align: center;
+                font-weight: 500;
+                padding-top: .7rem;
+            }
+        }
+    } 
+    .second-content{
+        margin-top:-100px;
+        .cloud-items{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            .content{
+                position: relative;
+                padding: 3rem;
+                background-color: rgb(252, 250, 250);
+                width: 31.5%;
+               
+               
+                h5{
+                    text-align: center;
+                }
+                .box-content{
+                    background-color: $hoverColor;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    
+                    margin:1.5rem 0;
+                    .cloud-price{
+                        padding:1.2rem 2rem;
+                        color: #fff;
+                    }
+                }
+                .second{
+                  background: linear-gradient(45deg,blue , $hoverColor);
+                   
+                }
+                
+                .sec-par{
+                    text-align: center;
+                    color: $paragraphColor;
+                }
+                .backage-section{
+                    margin:1.5rem 0rem .5rem;
+                    padding: 1.2rem 0rem .2rem;
+                    border-top: 1px solid rgb(207, 207, 207);
+                    .package-par{
+                        display: inline;
+                        color: $paragraphColor;
+                    }
+                    i{
+                        color: $hoverColor;
+                    }
+                    .cloud-data{
+                        padding-bottom: .5rem ;
+                    }
+                }
+                .btn-layer{
+                    position: absolute;
+                    transform:translateX(-50%) translateY(-50%);
+                    top:100% ;
+                    left: 50%;
+                                                                                                                                                                    
+                }
+                button{
+                        @include buttonStyle;
+                        padding: .7rem 1rem;
+                        font-weight: 500;
+                        width: 100%;
+                        &:hover{
+                            background-color: #0db185;
+                        }
+                }
+                .btn-two{
+                    background: linear-gradient(45deg,blue , $hoverColor);
+                    &:hover{
+                        background: linear-gradient(45deg,$hoverColor , blue);
+                    }
+                }
+            }    
+        }
+    }   
+}
+
+
+////////////////////////////// end code of cloud hosting
+///////////////////////////////start code of cloud feature
+.cloud-feature{
+    margin-top: 5rem;
+    .address{
+        text-align: center;
+       @include textStyle;
+    }
+    h2{
+        text-align: center;
+    }
+    .feature-content{
+        padding: 4rem 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .main-box{
+            width: 48%;
+            border-radius: .2rem;
+            margin-bottom: 2rem;
+            background-color: #fff;
+              box-shadow: 0 0 8px rgb(189, 179, 179);
+            padding: 1rem .8rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            i{
+                font-size:3rem;
+                color: $hoverColor;
+            }
+            .content-box{
+               padding: 0 .5rem;
+            }
+        }
+    }
+}
+// ///////////////////////////////end code of cloud feature
+/////////////////////////////////// start code of testimonial
+.testimonial{
+    background-color: #f0f0f0;
+    padding: 4rem;
+    .address{
+        text-align: center;
+       @include textStyle;
+    }
+    h2{
+        text-align: center;
+    }
+    .content{
+        .icon-testmonial{
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(45deg,blue , $hoverColor);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            i{
+                color:#fff;
+                font-size: 1.5rem;
+            }
+        }
+        
+        .first-par{
+            color:$paragraphColor ;
+            padding: 3rem 0rem;
+        }
+    } 
+    .carousel-indicators li{
+        background-color:$hoverColor;
+        width:.5rem ;
+        height:.5rem;
+        border-radius: 50%;
+    }
+ 
+}
+///////////////////////////////////end code of testimonial
+///////////////////////////////////// start code of footer
+.footer{
+    background-image:url(../images/footer.jpg);
+    background-size: cover;
+    position: relative;
+   
+   .layer-footer{
+        @include imageHover;
+       background-color: rgba($color: #263F93, $alpha: .4);
+    
+    }
+    .first-part{
+        padding: 4rem 0;
+        border-bottom: 1px solid rgba($color: #a3a1a1, $alpha: .5);
+        .content{
+            color: #fff;
+            h5{
+                padding: 1rem 0rem;
+            }
+            span{
+                font-weight: 500;
+            }
+            
+         }
+    }
+    .second-part{
+        color: #fff;
+        text-align: center;
+        p{
+            padding: 3rem 0 ;
+        }
+    }
+    
+}
+///////////////////////////////////// end code of footer
+
+
+
+
+
+//////////////////////loader
+.home{
+    display: none;
+}
+.load{
+    height: 100vh;
+    width:100vw;
+    background-color: #16191e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .spinner{
+       width: 100px;
+       height: 100px;
+       border: 10px solid rgb(121, 120, 120);
+       border-top-color: #2a88e6;
+       border-radius: 50%;
+       animation: move 1.5s linear infinite;
+    }
+}
+@keyframes move{
+   0%{
+    transform: rotate(0deg);
+   }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+////////////////start code of media queries
+@media all and (max-width:767px){
+    /////////////navbar
+    nav{
+        @include navmedia;
+    } 
+    a.active{
+        color: $hoverColor ;
+    }
+    nav ul.show{
+        left: 0;
+    }
+    //////////header
+    header{
+        .image-layer{
+            .header-layer{
+                @include headerMedia;
+            }
+        }
+    }
+    //////////////service section
+    .service-section{
+            .service-container{
+                .content{
+                    width: 98%;
+                    margin-bottom: 2rem;
+                }
+            }
+        }
+  
+    
+    ///////////////////cloud hosting
+    #cloud-section{
+        .second-content{
+            .cloud-items{
+                display: block;
+                .content{
+                    width: 98% ;
+                    margin-bottom: 2rem;
+                }
+            }
+        }
+    }
+    ///////////////////////cloud feature
+    .cloud-feature{
+        .feature-content{
+            .main-box{
+                width: 98% ;
+            }
+        }
+    }
+    //////////////////////////footer
+    
+    .footer{
+        background-size: 100% 100%;
+        .content{
+            margin: .5rem 0;
+        }
+    }
+
+}
+/////////////small
+@media (min-width:768px) and (max-width:991px){
+    //////////navbar
+    nav{
+        @include navmedia;
+    } 
+    a.active{
+        color: $hoverColor ;
+    }
+    nav ul.show{
+        left: 0;
+    }
+    //////////header
+    header{
+        .image-layer{
+            .header-layer{
+                @include headerMedia;
+            }
+        }
+    }
+     //////////////service section
+     .service-section{
+        .service-container{
+            .content{
+                width: 48%;
+                margin-bottom: 2rem;
+            }
+        }
+    }
+     ///////////////////cloud hosting
+     #cloud-section{
+        .second-content{
+            .cloud-items{
+                .content{
+                    width: 48%;
+                    margin-bottom: 2rem;
+                }
+            }
+        }
+    }
+    
+    
+}

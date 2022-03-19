@@ -1,0 +1,36 @@
+@mixin textStyle {
+    color: $hoverColor;
+    font-weight: 500;
+}
+@mixin main-style {
+    color: #fff;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+@mixin headerColor {
+    color: #47495A;
+    font-weight: 500;
+}
+@mixin boxText {
+    color: $textColor;
+    padding: 1.4rem 0rem;
+    font-weight: 500;
+    font-size: 1.4rem;
+}
+@mixin imageHover {
+    top:0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba($color:#4D3DBA, $alpha: .7);
+    position: absolute;
+}
+@mixin btnStyle{
+    padding:1rem;
+    
+}
+@mixin trans {
+    transition: all 1s;
+}
